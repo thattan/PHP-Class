@@ -10,8 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <a href="index.php">View All Movies</a>
-        <a href="index.php?action=deleteForm">Delete A Movie</a>
+        <?php include("nav.php") ?>
         <form action="index.php" method="POST">
             <input type="hidden" name="action" value="deleteMovie">
             <select name="movieId">

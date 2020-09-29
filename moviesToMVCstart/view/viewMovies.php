@@ -5,11 +5,10 @@
         <title></title>
     </head>
     <body>
-        <p> <?php ?> </p>
+        <p> <?php echo $pageTitle; ?> </p>
 
         <br>
-        <a href="index.php">View All Movies</a>
-        <a href="index.php?action=deleteForm">Delete A Movie</a>
+        <?php include("view/nav.php")?>
         <table>
             
             <?php foreach ($movies as $single) : ?>

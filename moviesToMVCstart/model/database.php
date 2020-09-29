@@ -61,5 +61,24 @@ function get_rating($rating) {
     return $results;
 }
 
+function add_movie($title, $director, $year, $rating)
+{
+    require_once('database.php');
 
+    // Add the product to the database  
+    $query = 'INSERT INTO movies
+                 (title, director, year, rating)
+              VALUES
+                 (:title, :director, :year, :rating)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':title', $title);
+    $statement->bindValue(':director', $director);
+    $statement->bindValue(':year', $year);
+    $statement->bindValue(':rating', $rating);
+    $statement->execute();
+    $statement->closeCursor();
+
+    // Display the Product List page
+    include('index.php');
+}
 ?>
